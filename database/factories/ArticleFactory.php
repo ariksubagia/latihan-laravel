@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Str;
 
 class ArticleFactory extends Factory
 {
@@ -14,7 +15,10 @@ class ArticleFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'title'     => $this->faker->title(),
+            'content'   => $this->faker->randomLetter(),
+            'image'     => $this->faker->image(),
+            'remember_token' => Str::random(10),
         ];
     }
 }

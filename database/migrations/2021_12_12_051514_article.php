@@ -13,12 +13,6 @@ class Article extends Migration
      */
     public function up()
     {
-        // - id -> primary key, big integer -> id dari article
-		// - title -> varchar(200) -> judul dari article
-		// - content -> text -> isi dari article
-		// - image -> text -> alamat gambar article
-		// - created_at -> datetime -> tanggal dibuat article, biasanya auto diisi oleh sistem
-		// - updated_at -> datetime -> tanggal record di update, biasanya auto diisi oleh sistem
 
         Schema::create('article', function (Blueprint $table) {
             $table->id();
@@ -36,6 +30,6 @@ class Article extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('article');
+        Schema::dropIfExists('articles');
     }
 }
